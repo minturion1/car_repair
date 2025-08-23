@@ -1,0 +1,40 @@
+.container {
+    background-image: url('./images/background.png');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    padding: 50px 200px;
+}
+.text {
+    color: var(--white-color);
+    max-width: 60%;
+    margin-top: 100px;
+}
+.welcome {
+    display: inline-block;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 15px 50px;
+    transform: skewX(20deg);
+    border-radius: 5px;
+    background-color: var(--red-color);
+}
+.welcome span {
+    display: inline-block;
+    transform: skew(-20deg);
+}
+.title {
+    font-size: 72px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-top: 20px;
+}
+.title span {
+    color: var(--red-color);
+}
+.par {
+    color: var(--grey-color);
+    max-width: 60%;
+    line-height: 1.5;
+    margin-top: 20px;
+}

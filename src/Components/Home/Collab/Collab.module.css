@@ -1,0 +1,22 @@
+.container {
+    position: relative;
+    bottom: 100px;
+    margin: 0px 100px;
+    border-radius: 10px;
+    background-color: var(--background-dark-color);
+
+}
+.images_list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    height: 200px;
+}
+.image {
+    display: block;
+    height: 100%;
+    height: auto;
+    max-width: 200px;
+    margin: auto;
+}

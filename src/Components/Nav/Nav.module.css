@@ -1,0 +1,26 @@
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    
+}
+.logo {
+    color: var(--white-color);
+    font-size: 32px;
+}
+.right {
+
+}
+.links_list {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+.link {
+    color: var(--white-color);
+}
+.link:hover {
+    text-decoration: underline;
+}

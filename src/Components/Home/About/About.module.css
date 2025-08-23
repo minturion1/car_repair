@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--background-light-color);
+    margin: 20px 200px;
+    padding: 20px;
+    border-radius: 20px;
+}
+.pretitle {
+    color: var(--red-color);
+    text-transform: uppercase;
+    font-size: 30px;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+.title {
+    color: var(--white-color);
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.par {
+    color: var(--grey-color);
+    margin-top: 100px;
+    max-width: 70%;
+}
+.left {
+    flex: 1;
+    margin: 100px 50px;
+}
+
+.right {
+    flex: 1;
+}
+.number {
+    font-size: 300px;
+    color: var(--red-color);
+    font-weight: bold;
+}
+.number_par {
+    font-size: 50px;
+    color: var(--white-color);
+}
