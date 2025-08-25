@@ -1,0 +1,101 @@
+.container {
+    margin: 100px 200px;
+}
+.top {
+    position: relative;
+}
+.text {
+    text-align: center;
+    margin: 0 auto;
+}
+.pretitle {
+    color: var(--red-color);
+    text-transform: uppercase;
+    font-size: 25px;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+.title {
+    color: var(--white-color);
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.view_more {
+    color: var(--white-color);
+    position: absolute;
+    top: 20%;
+    right: 100px;
+    display: inline-block;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 15px 50px;
+    transform: skewX(20deg);
+    border-radius: 5px;
+    border: 1px solid var(--red-color);
+    transition: 0.2s;
+    
+}
+.view_more:hover {
+    background-color: var(--red-color);    
+}
+
+.view_more span {
+    display: inline-block;
+    transform: skew(-20deg);
+}
+.list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 50px;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.service {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.engine {
+    background-image: url('./images/engine.jpg');
+}
+.brake {
+    background-image: url('./images/brakes.jpg');
+}
+.transmission {
+    background-image: url('./images/transmission.jpg');
+}
+.suspension {
+    background-image: url('./images/suspension.jpg');
+}
+.service::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7); 
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.service:hover::after {
+  opacity: 0;
+}
+.service_name {
+    position: relative;
+    z-index: 2;
+    color: var(--white-color);
+    font-size: 30px;
+    max-width: 50%;
+    margin: 30px;
+}

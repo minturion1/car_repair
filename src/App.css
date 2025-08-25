@@ -2,8 +2,8 @@
   --red-color: rgb(221, 60, 60);
   --white-color: #fff;
   --grey-color: #868585;
-  --background-dark-color: #252525;
-  --background-light-color: #323232;
+  --background-dark-color: #1d1d1d;
+  --background-light-color: #2b2b2b;
 }
 body {
   margin: 0;

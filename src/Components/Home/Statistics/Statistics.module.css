@@ -1,0 +1,34 @@
+hr {
+    height: 5px;
+    border: 0;
+}
+.hr1 {
+    background: linear-gradient(to right, var(--red-color), var(--background-dark-color));
+    
+}
+.hr2 {
+    background: linear-gradient(to left, var(--red-color), var(--background-dark-color));
+}
+
+.stats {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    justify-content: center;
+    margin: 100px;
+}
+.stat {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.number {
+    font-size: 120px;
+    color: var(--white-color);
+    font-weight: bold;
+}
+.par {
+    color: var(--grey-color);
+    font-size: 20px;
+}

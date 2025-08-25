@@ -17,6 +17,7 @@ function Header() {
                 Let us take care of your car, so you can focus on what matters most.
             </div>
         </div>
+        <a href="#" className={s.button}>Make an appointment</a>
     </div>
   );
 }

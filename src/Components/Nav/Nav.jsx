@@ -9,6 +9,7 @@ function Nav() {
                 <a href="#" className={s.link}>About</a>
                 <a href="#" className={s.link}>Gallery</a>
                 <a href="#" className={s.link}>Pricing</a>
+                <a href="#" className={s.link}>Blog</a>
                 <a href="#" className={s.link}>Contacts</a>
             </div>
         </div>

@@ -1,0 +1,66 @@
+.container {
+    margin: 100px 200px;
+}
+.top {
+    position: relative;
+}
+.text {
+    margin: 0 auto;
+}
+.posttitle {
+    color: var(--red-color);
+    font-size: 25px;
+    letter-spacing: 5px;
+    margin-top: 10px;
+}
+.title {
+    color: var(--white-color);
+    font-size: 50px;
+    font-weight: bold;
+    
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    margin-top: 50px;
+    align-items: center;
+}
+.image {
+    display: block;
+    width: 40%;
+    border-radius: 10px;
+}
+.right {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: center;
+}
+.card_icon {
+    width: 100px;
+    height: 100px;
+}
+.card_text {
+
+}
+.card_title {
+    color: var(--white-color);
+    font-size: 30px;
+    font-weight: bold;
+    
+}
+.card_par {
+    color: var(--grey-color);
+    line-height: 1.5;
+    margin-top: 20px;
+    font-size: 18px;
+    width: auto;
+}
