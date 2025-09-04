@@ -1,7 +1,10 @@
+import Footer from '../Footer/Footer';
 import About from './About/About';
+import Book from './Book/Book';
 import Collab from './Collab/Collab';
 import Header from './Header/Header';
 import s from './Home.module.css';
+import Plans from './Plans/Plans';
 import Services from './Services/Services';
 import Statistics from './Statistics/Statistics';
 import Testimonials from './Testimonials/Testimonials';
@@ -10,6 +13,7 @@ import WhyChooseUs from './WhyChooseUs/WhyChooseUs';
 function Home() {
   return (
     <div className={s.container}>
+        
         <Header></Header>
         <Collab></Collab>
         <About></About>
@@ -17,6 +21,9 @@ function Home() {
         <WhyChooseUs></WhyChooseUs>
         <Statistics></Statistics>
         <Testimonials></Testimonials>
+        <Book></Book>
+        <Plans></Plans>
+        <Footer></Footer>
     </div>
   );
 }

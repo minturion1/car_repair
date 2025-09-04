@@ -1,0 +1,100 @@
+.container {
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding: 50px 200px;
+    
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+    gap: 20px;
+    
+}
+.card {
+    background-color: var(--background-light-color);
+    border-radius: 10px;
+    padding: 50px 0px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+.card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--red-color);
+ }
+.icon {
+    display: block;
+    width: 150px;
+    margin: auto;
+}
+.title {
+    margin: auto;
+    text-align: center;
+    color: var(--white-color);
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-top: 20px;
+    
+}
+.title span {
+    color: var(--red-color);
+}
+.par {
+    margin: auto;
+    text-align: center;
+    color: var(--grey-color);
+    line-height: 1.5;
+    margin-top: 20px;
+    font-size: 15px;
+    margin: 20px 30px;
+    line-height: 1.5;
+}
+
+
+ .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: var(--red-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+ }
+ 
+ .overlayTitle {
+    color: var(--white-color);
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.2;
+ }
+ 
+ .overlayLink {
+    color: var(--white-color);
+    margin-top: 20px;
+    font-size: 15px;
+    transition: text-decoration 0.2s ease-in-out;
+ }
+ .overlayLink i {
+    font-size: 15px;
+    color: var(--white-color);
+}
+ 
+ 
+ .card:hover .overlay {
+    transform: translateY(0); 
+ }

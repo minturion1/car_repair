@@ -1,0 +1,128 @@
+.container {
+    margin: 0px 200px 100px;
+}
+.top {
+    position: relative;
+}
+.text {
+    text-align: center;
+    margin: 0 auto;
+}
+.pretitle {
+    color: var(--red-color);
+    text-transform: uppercase;
+    font-size: 25px;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+.title {
+    color: var(--white-color);
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.view_more {
+    color: var(--white-color);
+    position: absolute;
+    top: 20%;
+    right: 100px;
+    display: inline-block;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 15px 50px;
+    transform: skewX(20deg);
+    border-radius: 5px;
+    border: 1px solid var(--red-color);
+    transition: 0.2s;
+    
+}
+.view_more:hover {
+    background-color: var(--red-color);    
+}
+
+.view_more span {
+    display: inline-block;
+    transform: skew(-20deg);
+}
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 50px;
+}
+.card {
+  background-color: var(--white-color);
+  border-radius: 10px;
+  max-width: 400px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+.card_top {
+  background-color: var(--red-color);
+  padding: 50px;
+  border-radius: 10px;
+  transform: skewX(10deg) translateX(17px);
+}
+
+
+.card_price {
+  color: var(--white-color);
+  transform: skewX(-10deg);
+}
+
+.card_title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card_par {
+  font-size: 16px;
+  margin-top: 5px;
+  
+}
+
+.card_number {
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.card_list {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 50px 20px;
+}
+
+.card_item {
+  font-size: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  color: var(--grey-color);
+}
+
+.card_item i {
+  color: var(--red-color);
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.card_button {
+  background-color: var(--red-color);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.card_button:hover {
+  background-color: #cc0000;
+}

@@ -1,0 +1,33 @@
+.container {
+    position: relative;
+    top: -250px;
+    background-image: url('./images/car.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 20px 200px;
+    padding: 150px 100px;
+    border-radius: 20px;
+}
+.title {
+    max-width: 500px;
+    color: var(--white-color);
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.title span {
+    color: var(--red-color);
+}
+.button {
+    display: inline-block;
+    padding: 20px 30px;
+    margin-top: 20px;
+    border: 1px solid var(--red-color);
+    font-size: 25px;
+    color: var(--white-color);
+    transition: 0.2s;
+}
+.button:hover {
+    background-color: var(--red-color);
+}

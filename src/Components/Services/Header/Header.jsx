@@ -8,17 +8,15 @@ function Header() {
         <Nav></Nav>
         <div className={s.text}>
             <div className={s.welcome}>
-                <span>Welcome to auto works</span>
+                <span>What we can offer</span>
             </div>
             <div className={s.title}>
-                Your <span>Trusted</span> Auto Repair Service Provider
+                AutoWorks <span>Services</span>
             </div>
             <div className={s.par}>
-                We offer reliable and efficiant services to ensure your vehicle is always in top condition. 
-                Let us take care of your car, so you can focus on what matters most.
+                A range of service area that we provide
             </div>
         </div>
-        <a href="#" className={s.button}>Make an appointment</a>
     </div>
   );
 }

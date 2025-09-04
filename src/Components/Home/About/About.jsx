@@ -1,4 +1,4 @@
-import Nav from '../../Nav/Nav';
+
 import s from './About.module.css';
 
 function About() {

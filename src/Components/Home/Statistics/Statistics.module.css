@@ -1,6 +1,10 @@
+.container {
+    margin: 0;
+}
 hr {
     height: 5px;
     border: 0;
+    margin: 0;
 }
 .hr1 {
     background: linear-gradient(to right, var(--red-color), var(--background-dark-color));

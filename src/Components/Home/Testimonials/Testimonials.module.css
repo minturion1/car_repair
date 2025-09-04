@@ -1,5 +1,7 @@
 .container {
-    margin: 100px 200px;
+    background-color: var(--background-light-color);
+    padding: 100px 200px;
+    padding-bottom: 400px;
 }
 .top {
     position: relative;
@@ -53,11 +55,16 @@ i {
     padding: 20px 80px;
     transform: skewX(20deg);
     border-radius: 10px;
+    cursor: pointer;
 }
-.active {
+.client.active {
     background-color: var(--red-color);
     color: var(--white-color);
 }
+.client.active .client_par {
+    color: var(--white-color);
+}
+
 .client_info {
     display: flex;
     flex-direction: row;

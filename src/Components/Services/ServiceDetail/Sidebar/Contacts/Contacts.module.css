@@ -1,0 +1,23 @@
+.container {
+    padding: 40px;
+    border-radius: 10px;
+    background-color: var(--background-light-color);
+    width: 100%;
+}
+.column_list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.column_item {
+    color: var(--grey-color);
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+
+    font-size: 16px;
+}
+.column_item i {
+    font-size: 16px;
+}
