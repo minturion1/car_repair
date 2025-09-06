@@ -1,4 +1,5 @@
 
+import { NavLink } from 'react-router-dom';
 import s from './Services.module.css';
 
 function Services() {
@@ -15,7 +16,7 @@ function Services() {
                 </div>
             </div>
              
-            <a href='#' className={s.view_more}><span>View more</span></a>
+            <NavLink to="/services" className={s.view_more}><span>View more</span></NavLink>
         </div>
         
         <div className={s.list}>

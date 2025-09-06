@@ -38,9 +38,9 @@ function Testimonials() {
             <div className={s.clients}>
                 {clients.map(client=> {
                     return (
-                        <div onClick={()=>{handleClick(client.id)}} className={`${s.client} ${client.id === activeClientId ? s.active : ''}`}>
+                        <div key={client.id} onClick={()=>{handleClick(client.id)}} className={`${s.client} ${client.id === activeClientId ? s.active : ''}`}>
                             <div className={s.client_info}>
-                                <img src={client.img} className={s.client_photo}></img>
+                                <img alt={client.firstName} src={client.img} className={s.client_photo}></img>
                                 <div className={s.client_text}>
                                     <div className={s.client_name}>{client.firstName} {client.lastName}</div>
                                     <div className={s.client_par}>{client.location}</div>

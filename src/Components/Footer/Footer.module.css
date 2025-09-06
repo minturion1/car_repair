@@ -69,6 +69,7 @@
     /* height: 30px; */
 }
 .column_item i {
+    color: var(--red-color);
     font-size: 20px;
 }
 .link:hover {

@@ -98,3 +98,7 @@
  .card:hover .overlay {
     transform: translateY(0); 
  }
+
+ .skeleton {
+    margin: 20px 200px;
+ }

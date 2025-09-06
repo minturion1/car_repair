@@ -1,3 +1,4 @@
+import FAQ from '../FAQ/FAQ';
 import Footer from '../Footer/Footer';
 import About from './About/About';
 import Book from './Book/Book';
@@ -23,6 +24,10 @@ function Home() {
         <Testimonials></Testimonials>
         <Book></Book>
         <Plans></Plans>
+        <div className={s.pad}>
+            <FAQ />
+        </div>
+        
         <Footer></Footer>
     </div>
   );

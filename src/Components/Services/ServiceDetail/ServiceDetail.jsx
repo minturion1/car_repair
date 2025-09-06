@@ -1,14 +1,35 @@
-
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import Footer from '../../Footer/Footer';
 import s from './ServiceDetail.module.css';
-import services from '../ServicesList/ServicesListData';
 import Header from './Header/Header';
 import Sidebar from './Sidebar/Sidebar';
 import Nav from '../../Nav/Nav';
+import Features from './Features/Features';
+import Book from '../../Book/Book';
+import FAQ from '../../FAQ/FAQ';
 
 function ServiceDetail() {
+    const [services, setServices] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     const { id } = useParams();
+
+    useEffect(() => {
+        axios.get("http://127.0.0.1:8000/api/v1/services/")
+        .then((response) => {
+            setServices(response.data);
+            setLoading(false);
+        })
+        .catch((error) => {
+            setError(error);
+            setLoading(false);
+        });
+    }, []);
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p style={{ color: "red" }}>Error: {error.message}</p>;
+    
     const service = services.find((s) => s.id === Number(id));
 
      if (!service) {
@@ -24,10 +45,14 @@ function ServiceDetail() {
                 <div className={s.mainContent}>
 
                     <Header service={service}/>
+                    <Features />
+                    <FAQ />
+                    
                 </div>
                 <Sidebar services={services} />
             </div>
             
+            <Book />
             <Footer />
         </div>
     );

@@ -1,0 +1,58 @@
+.carouselWrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 20px 0;
+}
+
+.serviceCarousel {
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 10px 0;
+  flex: 1;
+}
+
+.serviceCard {
+  min-width: 200px;
+  flex-shrink: 0;
+  background: transparent;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  color: var(--white-color);
+  border: 1px solid var(--white-color);
+  cursor: pointer;
+}
+.serviceCard.active {
+  background-color: var(--red-color);
+  border: none;
+}
+.arrow {
+    background-color: transparent;
+    color: var(--white-color);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 30px;
+    transition: 0.2s;
+}
+.arrow:hover {
+  color: var(--red-color);
+}
+
+.left {
+  margin-right: 30px;
+}
+
+.right {
+  margin-left: 30px;
+}
+
+/* Мобільні: ховаємо стрілки */
+@media (max-width: 768px) {
+  .arrow {
+    display: none;
+  }
+}

@@ -3,14 +3,14 @@
     width: 100%;
 }
 .input {
-    display: block;
+    display: inline-block;
     background-color: transparent;
     color: var(--grey-color);
     padding: 20px 40px;
     border-radius: 15px;
     font-size: 18px;
     border: 1px solid var(--grey-color);
-    width: 100%;
+    
     outline: none;
     color: var(--white-color);
 }

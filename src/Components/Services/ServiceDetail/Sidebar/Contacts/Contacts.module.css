@@ -2,7 +2,6 @@
     padding: 40px;
     border-radius: 10px;
     background-color: var(--background-light-color);
-    width: 100%;
 }
 .column_list {
     display: flex;
@@ -15,9 +14,10 @@
     flex-direction: row;
     gap: 20px;
     align-items: center;
-
+    line-height: 1.5;
     font-size: 16px;
 }
 .column_item i {
     font-size: 16px;
+    color: var(--red-color);
 }
