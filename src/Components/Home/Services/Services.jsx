@@ -1,8 +1,30 @@
 
 import { NavLink } from 'react-router-dom';
 import s from './Services.module.css';
+import {useState, useEffect} from 'react';
+import axios from "axios";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 function Services() {
+    const [services, setServices] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        axios.get("http://127.0.0.1:8000/api/v1/services/")
+        .then((response) => {
+            setServices(response.data);
+            setLoading(false);
+        })
+        .catch((error) => {
+            setError(error);
+            setLoading(false);
+        });
+    }, []);
+    if (loading) return <div className={s.skeleton}><Skeleton style={{ marginBottom: "20px", borderRadius: "20px" }} baseColor="#2b2b2b" highlightColor="#fff" count={3} height={400} width="100%" /></div>;
+    if (error) return <p style={{ color: "red" }}>Error: {error.message}</p>;
+
   return (
     <div className={s.container}>
         <div className={s.top}>
@@ -20,26 +42,15 @@ function Services() {
         </div>
         
         <div className={s.list}>
-            <div className={`${s.service} ${s.engine}`}>
-                <div className={s.service_name}>
-                    Engine Repair
-                </div>
-            </div>
-            <div className={`${s.service} ${s.brake}`}>
-                <div className={s.service_name}>
-                    Brake Repair
-                </div>
-            </div>
-            <div className={`${s.service} ${s.transmission}`}>
-                <div className={s.service_name}>
-                    Transmission Repair
-                </div>
-            </div>
-            <div className={`${s.service} ${s.suspension}`}>
-                <div className={s.service_name}>
-                    Suspension Repair
-                </div>
-            </div>
+            {services.slice(0,4).map(service=> {
+                return(
+                <NavLink to={`/services/${service.id}`} style={{ backgroundImage: `url(${service.image})` }} className={`${s.service} ${s.engine}`}>
+                    <div className={s.service_name}>
+                        {service.name}
+                    </div>
+                </NavLink> 
+                )
+            })}
         </div>
     </div>
   );

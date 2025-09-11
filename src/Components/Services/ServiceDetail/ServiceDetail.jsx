@@ -27,8 +27,7 @@ function ServiceDetail() {
             setLoading(false);
         });
     }, []);
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p style={{ color: "red" }}>Error: {error.message}</p>;
+    if (loading) return ;
     
     const service = services.find((s) => s.id === Number(id));
 
@@ -45,7 +44,7 @@ function ServiceDetail() {
                 <div className={s.mainContent}>
 
                     <Header service={service}/>
-                    <Features />
+                    <Features features={service.features} />
                     <FAQ />
                     
                 </div>

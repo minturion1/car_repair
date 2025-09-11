@@ -1,0 +1,58 @@
+.container {
+    background-image: url('./images/background.png');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    height: 500px;
+    padding: 50px 200px;
+}
+.text {
+    color: var(--white-color);
+    max-width: 60%;
+    margin-top: 100px;
+    
+    
+}
+.welcome {
+    display: inline-block;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 15px 50px;
+    transform: skewX(20deg);
+    border-radius: 5px;
+    background-color: var(--red-color);
+    
+}
+.welcome span {
+    display: inline-block;
+    transform: skew(-20deg);
+}
+.title {
+    font-size: 72px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-top: 20px;
+    
+}
+.title span {
+    color: var(--red-color);
+}
+.par {
+    color: var(--white-color);
+    line-height: 1.5;
+    margin-top: 20px;
+    font-size: 18px;
+    
+}
+.button {
+    display: inline-block;
+    padding: 20px 30px;
+    margin-top: 50px;
+    border: 1px solid var(--red-color);
+    font-size: 25px;
+    color: var(--white-color);
+    transition: 0.2s;
+}
+.button:hover {
+    background-color: var(--red-color);
+}

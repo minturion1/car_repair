@@ -67,18 +67,7 @@
     overflow: hidden;
     cursor: pointer;
 }
-.engine {
-    background-image: url('./images/engine.jpg');
-}
-.brake {
-    background-image: url('./images/brakes.jpg');
-}
-.transmission {
-    background-image: url('./images/transmission.jpg');
-}
-.suspension {
-    background-image: url('./images/suspension.jpg');
-}
+
 .service::after {
   content: "";
   position: absolute;

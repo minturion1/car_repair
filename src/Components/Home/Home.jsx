@@ -1,3 +1,4 @@
+import ContactsBlock from '../ContactsBlock/ContactsBlock';
 import FAQ from '../FAQ/FAQ';
 import Footer from '../Footer/Footer';
 import About from './About/About';
@@ -15,20 +16,21 @@ function Home() {
   return (
     <div className={s.container}>
         
-        <Header></Header>
-        <Collab></Collab>
-        <About></About>
-        <Services></Services>
-        <WhyChooseUs></WhyChooseUs>
-        <Statistics></Statistics>
-        <Testimonials></Testimonials>
-        <Book></Book>
-        <Plans></Plans>
+        <Header />
+        <Collab />
+        <About />
+        <Services />
+        <WhyChooseUs />
+        <Statistics />
+        <Testimonials />
+        <Book />
+        <Plans />
+        <ContactsBlock />
         <div className={s.pad}>
             <FAQ />
         </div>
         
-        <Footer></Footer>
+        <Footer />
     </div>
   );
 }

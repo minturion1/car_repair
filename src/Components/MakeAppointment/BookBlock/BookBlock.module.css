@@ -1,0 +1,9 @@
+.container {
+    padding: 200px;
+}
+
+.title {
+    font-size: 72px;
+    color: var(--white-color);
+    text-align: center;
+}

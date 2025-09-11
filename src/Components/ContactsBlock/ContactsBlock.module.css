@@ -1,0 +1,30 @@
+.container {
+    background-color: var(--background-light-color);
+    padding: 100px 100px;
+    text-align: center;
+}
+.title {
+    max-width: 700px;
+    margin: auto;
+    color: var(--white-color);
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+.title span {
+    color: var(--red-color);
+}
+.button {
+    display: inline-block;
+    padding: 20px 30px;
+    margin-top: 50px;
+    border: 1px solid var(--red-color);
+    font-size: 25px;
+    color: var(--white-color);
+    transition: 0.2s;
+    
+}
+.button:hover {
+    background-color: var(--red-color);
+}

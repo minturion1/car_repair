@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import s from './Header.module.css';
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 function Header(props) {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -11,7 +13,7 @@ function Header(props) {
         <div className={s.title}>
             {props.service.name}
         </div>
-        {!imageLoaded && <p>Loading image...</p>}
+        {!imageLoaded && <Skeleton style={{ marginBottom: "20px", marginTop: "50px", borderRadius: "20px" }} baseColor="#2b2b2b" highlightColor="#fff" height={600} width="100%" />}
         <img key={props.service.id} onLoad={() => setImageLoaded(true)} style={{ display: imageLoaded ? "block" : "none" }} src={props.service.image} alt={props.service.title} className={s.image} />
         <div className={s.par}>
             {props.service.par}{props.service.par}

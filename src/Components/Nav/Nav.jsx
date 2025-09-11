@@ -13,13 +13,7 @@ function Nav() {
                 <NavLink to="/gallery" className={({ isActive }) => isActive ? `${s.link} ${s.active}` : s.link}>
                   Gallery
                 </NavLink>
-                <NavLink to="/pricing" className={({ isActive }) => isActive ? `${s.link} ${s.active}` : s.link}>
-                  Pricing
-                </NavLink>
-                <NavLink to="/blog" className={({ isActive }) => isActive ? `${s.link} ${s.active}` : s.link}>
-                  Blog
-                </NavLink>
-                <NavLink to="/contacts" className={({ isActive }) => isActive ? `${s.link} ${s.active}` : s.link}>
+                <NavLink to="/contact-us" className={({ isActive }) => isActive ? `${s.link} ${s.active}` : s.link}>
                   Contacts
                 </NavLink>
             </div>

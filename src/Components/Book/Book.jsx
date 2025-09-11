@@ -1,4 +1,5 @@
 
+import { NavLink } from 'react-router-dom';
 import s from './Book.module.css';
 
 function Book() {
@@ -7,7 +8,7 @@ function Book() {
             <div className={s.title}>
                 Ready to schedule an <span>appointment?</span>
             </div>
-        <a href="#" className={s.button}>Make an appointment</a>
+        <NavLink to="/make-an-appointment" className={s.button}>Make an appointment</NavLink>
         
     </div>
   );
