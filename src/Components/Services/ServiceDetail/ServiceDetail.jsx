@@ -17,7 +17,7 @@ function ServiceDetail() {
     const { id } = useParams();
 
     useEffect(() => {
-        axios.get("http://127.0.0.1:8000/api/v1/services/")
+        axios.get("https://car-repair-backend-79o5.onrender.com/api/v1/services/")
         .then((response) => {
             setServices(response.data);
             setLoading(false);

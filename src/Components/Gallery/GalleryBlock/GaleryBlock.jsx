@@ -14,7 +14,7 @@ function GalleryBlock() {
     const [error, setError] = useState(null);
     useEffect(() => {
         
-        axios.get("http://127.0.0.1:8000/api/v1/gallery/")
+        axios.get("https://car-repair-backend-79o5.onrender.com/api/v1/gallery/")
         .then((response) => {
             setImages(response.data);
             setAllImages(response.data);

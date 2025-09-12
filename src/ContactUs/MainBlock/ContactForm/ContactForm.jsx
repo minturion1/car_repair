@@ -23,7 +23,7 @@ export default function ContactForm() {
         if (isBlocked) return;
         setIsBlocked(true);
         setTimeout(() => setIsBlocked(false), 5000);
-        axios.post("http://127.0.0.1:8000/api/v1/contacts/", formData)
+        axios.post("https://car-repair-backend-79o5.onrender.com/api/v1/contacts/", formData)
             .then(res => {
                 setIsModalOpen(true);
                 setTimeout(() => setIsModalOpen(false), 3000);
