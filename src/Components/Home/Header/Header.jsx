@@ -1,4 +1,5 @@
 
+import { NavLink } from 'react-router-dom';
 import Nav from '../../Nav/Nav';
 import s from './Header.module.css';
 
@@ -18,7 +19,7 @@ function Header() {
                 Let us take care of your car, so you can focus on what matters most.
             </div>
         </div>
-        <a href="#" className={s.button}>Make an appointment</a>
+        <NavLink to="/make-an-appointment" className={s.button}>Make an appointment</NavLink>
     </div>
   );
 }

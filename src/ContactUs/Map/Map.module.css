@@ -1,0 +1,26 @@
+.container {
+    margin: 200px;
+}
+.title {
+    font-size: 40px;
+    color: var(--white-color);
+}
+.image_container {
+    margin-top: 50px;
+    position: relative;
+}
+.image {
+    width: 100%;
+    display: block;
+    margin: auto;
+    border-radius: 20px;
+}
+.button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 20px;
+    background-color: var(--red-color);
+    color: var(--white-color);
+    border-radius: 20px;
+}
