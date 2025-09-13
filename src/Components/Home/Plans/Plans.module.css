@@ -136,4 +136,11 @@
   .card_list {
     margin-top: 0;
   }
+  .card_top {
+    transform: none;
+  }
+  .card_price {
+    transform: none;
+  }
+  
 }

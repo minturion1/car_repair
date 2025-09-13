@@ -66,7 +66,6 @@
 .link {
     
     transition: 0.2s;
-    /* height: 30px; */
 }
 .column_item i {
     color: var(--red-color);
