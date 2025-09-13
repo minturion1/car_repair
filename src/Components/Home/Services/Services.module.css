@@ -103,5 +103,9 @@
 @media(max-width:500px) {
     .view_more {
         padding: 10px 20px;
+    }  
+    .service {
+        width: 200px;
+        height: 100px;
     }
 }
