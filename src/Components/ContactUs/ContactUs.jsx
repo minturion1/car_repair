@@ -1,7 +1,7 @@
 import s from './ContactUs.module.css';
 import Header from './Header/Header';
 import MainBlock from './MainBlock/MainBlock';
-import Footer from '../Components/Footer/Footer'
+import Footer from '../Footer/Footer'
 import Map from './Map/Map';
 function ContactUs() {
     return (

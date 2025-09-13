@@ -1,5 +1,5 @@
 
-import Nav from '../../Components/Nav/Nav';
+import Nav from '../../Nav/Nav';
 import s from './Header.module.css';
 
 function Header() {

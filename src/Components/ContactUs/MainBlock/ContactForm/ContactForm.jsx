@@ -37,7 +37,7 @@ export default function ContactForm() {
     return (
         <div className={s.container}>
             <div className={`${s.modal} ${isModalOpen ? s.show : ""}`}>
-                Appointment successfully created!
+                Your message has been sent!
             </div>
             <div className={s.title}>Feedback</div>
             <div className={s.top_inputs}>

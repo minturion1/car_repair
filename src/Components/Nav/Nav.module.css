@@ -6,7 +6,7 @@
 }
 .logo {
     color: var(--white-color);
-    font-size: 32px;
+    font-size: var(--title2-size);
 }
 .right {
 
@@ -24,4 +24,10 @@
 }
 .active {
     text-decoration: underline;
+}
+
+@media(max-width:600px) {
+    .right {
+        display: none;
+    }
 }

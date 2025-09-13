@@ -1,13 +1,13 @@
 .container {
     background-color: var(--background-light-color);
-    padding: 100px 100px;
+    padding: 100px var(--side-margin);
     text-align: center;
 }
 .title {
     max-width: 700px;
     margin: auto;
     color: var(--white-color);
-    font-size: 50px;
+    font-size: var(--title2-size);
     font-weight: bold;
     margin-top: 10px;
     text-align: center;
@@ -20,11 +20,18 @@
     padding: 20px 30px;
     margin-top: 50px;
     border: 1px solid var(--red-color);
-    font-size: 25px;
+    font-size: var(--title3-size);
     color: var(--white-color);
     transition: 0.2s;
     
 }
 .button:hover {
     background-color: var(--red-color);
+}
+
+
+@media(max-width:500px) {
+    .container {
+        padding: 50px var(--side-margin);
+    }
 }

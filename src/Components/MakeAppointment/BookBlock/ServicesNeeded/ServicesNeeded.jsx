@@ -20,7 +20,7 @@ function ServicesNeeded(props) {
             setLoading(false);
           });
       }, []);
-      if (loading) return <div className={s.skeleton}><Skeleton style={{ marginBottom: "20px", borderRadius: "20px" }} baseColor="#2b2b2b" highlightColor="#fff" count={3} height={400} width="100%" /></div>;
+      if (loading) return <div className={s.skeleton}><Skeleton style={{ marginBottom: "20px", borderRadius: "20px" }} baseColor="#2b2b2b" highlightColor="#fff" height={400} width="100%" /></div>;
       if (error) return <p style={{ color: "red" }}>Error: {error.message}</p>;
     return (
         <div className={s.container}>

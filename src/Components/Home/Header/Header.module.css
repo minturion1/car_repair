@@ -3,7 +3,7 @@
     background-position: center;
     background-size: cover;
     height: 100vh;
-    padding: 50px 200px;
+    padding: 50px var(--side-margin);
 }
 .text {
     color: var(--white-color);
@@ -12,7 +12,7 @@
 }
 .welcome {
     display: inline-block;
-    font-size: 18px;
+    font-size: var(--par1-size);
     text-transform: uppercase;
     padding: 15px 50px;
     transform: skewX(20deg);
@@ -24,7 +24,7 @@
     transform: skew(-20deg);
 }
 .title {
-    font-size: 72px;
+    font-size: var(--title1-size);
     font-weight: bold;
     line-height: 1.2;
     margin-top: 20px;
@@ -37,17 +37,46 @@
     max-width: 60%;
     line-height: 1.5;
     margin-top: 50px;
-    font-size: 18px;
+    font-size: var(--par1-size);
 }
 .button {
     display: inline-block;
     padding: 20px 30px;
     margin-top: 50px;
     border: 1px solid var(--red-color);
-    font-size: 25px;
+    font-size: var(--title3-size);
     color: var(--white-color);
     transition: 0.2s;
 }
 .button:hover {
     background-color: var(--red-color);
+}
+
+
+@media (max-width:1500px) {
+    .text {
+    color: var(--white-color);
+    max-width: 100%;
+    margin-top: 100px;
+}
+}
+
+@media (max-width:700px) {
+    .par {
+        max-width: 100%;
+    }
+    .text {
+        margin-top: 20px;
+    }
+}
+@media (max-width:400px) {
+    .container {
+        background-image: none;
+        background-color: #000;
+        height: auto;
+        margin-bottom: 70px;
+    }
+    .welcome {
+        padding: 20px 10px;
+    }
 }

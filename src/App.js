@@ -6,7 +6,7 @@ import ServiceDetail from './Components/Services/ServiceDetail/ServiceDetail';
 import ScrollToTop from './ScrollToTop';
 import Gallery from './Components/Gallery/Gallery';
 import MakeAppointment from './Components/MakeAppointment/MakeAppointment';
-import ContactUs from './ContactUs/ContactUs';
+import ContactUs from './Components/ContactUs/ContactUs';
 
 function App() {
   return (

@@ -3,7 +3,7 @@
 }
 .title {
     color: var(--white-color);
-    font-size: 50px;
+    font-size: var(--title2-size);
     font-weight: bold;
     margin-top: 10px;
 }
@@ -26,7 +26,7 @@
 }
 .item_title {
     color: var(--white-color);
-    font-size: 20px;
+    font-size: var(--title3-size);
     
 }
 .item_sign {

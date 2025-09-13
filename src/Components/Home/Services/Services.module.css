@@ -1,5 +1,5 @@
 .container {
-    margin: 100px 200px;
+    margin: 100px var(--side-margin);
 }
 .top {
     position: relative;
@@ -11,13 +11,13 @@
 .pretitle {
     color: var(--red-color);
     text-transform: uppercase;
-    font-size: 25px;
+    font-size: var(--title3-size);
     letter-spacing: 5px;
     font-weight: bold;
 }
 .title {
     color: var(--white-color);
-    font-size: 50px;
+    font-size: var(--title2-size);
     font-weight: bold;
     margin-top: 10px;
 }
@@ -27,7 +27,7 @@
     top: 20%;
     right: 100px;
     display: inline-block;
-    font-size: 18px;
+    font-size: var(--par1-size);
     text-transform: uppercase;
     padding: 15px 50px;
     transform: skewX(20deg);
@@ -48,7 +48,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 50px;
+    margin: 50px 0;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
@@ -84,7 +84,24 @@
     position: relative;
     z-index: 2;
     color: var(--white-color);
-    font-size: 30px;
+    font-size: var(--title3-size);
     max-width: 50%;
     margin: 30px;
+}
+
+
+@media(max-width:1000px) {
+    .view_more {
+        top: 100px;
+        right: 50%;
+        transform: skewX(20deg) translateX(50%);
+    }
+    .list {
+        margin: 100px 0;
+    }
+}
+@media(max-width:500px) {
+    .view_more {
+        padding: 10px 20px;
+    }
 }

@@ -1,5 +1,5 @@
 .container {
-    margin: 100px 200px;
+    margin: 100px var(--side-margin);
 }
 .top {
     position: relative;
@@ -9,13 +9,13 @@
 }
 .posttitle {
     color: var(--red-color);
-    font-size: 25px;
+    font-size: var(--title3-size);
     letter-spacing: 5px;
     margin-top: 10px;
 }
 .title {
     color: var(--white-color);
-    font-size: 50px;
+    font-size: var(--title2-size);
     font-weight: bold;
     
 }
@@ -53,7 +53,7 @@
 }
 .card_title {
     color: var(--white-color);
-    font-size: 30px;
+    font-size: var(--title3-size);
     font-weight: bold;
     
 }
@@ -61,6 +61,26 @@
     color: var(--grey-color);
     line-height: 1.5;
     margin-top: 20px;
-    font-size: 18px;
+    font-size: var(--par1-size);
     width: auto;
+}
+
+@media(max-width:1500px) {
+    .main {
+        display: block;
+    }
+    .image {
+        display: none;
+    }
+}
+
+@media(max-width:700px) {
+    .card_icon {
+        width: 50px;
+        height: 50px;
+    }
+    .card {
+        gap: 10px;
+        align-items: start;
+    }
 }

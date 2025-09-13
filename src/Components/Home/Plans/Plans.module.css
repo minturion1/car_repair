@@ -1,5 +1,5 @@
 .container {
-    margin: 0px 200px 100px;
+    margin: 0px var(--side-margin) 100px;
 }
 .top {
     position: relative;
@@ -11,13 +11,13 @@
 .pretitle {
     color: var(--red-color);
     text-transform: uppercase;
-    font-size: 25px;
+    font-size: var(--title3-size);
     letter-spacing: 5px;
     font-weight: bold;
 }
 .title {
     color: var(--white-color);
-    font-size: 50px;
+    font-size: var(--title2-size);
     font-weight: bold;
     margin-top: 10px;
 }
@@ -27,14 +27,14 @@
     top: 20%;
     right: 100px;
     display: inline-block;
-    font-size: 18px;
+    font-size: var(--par1-size);
     text-transform: uppercase;
     padding: 15px 50px;
     transform: skewX(20deg);
     border-radius: 5px;
     border: 1px solid var(--red-color);
     transition: 0.2s;
-    
+    display: none;
 }
 .view_more:hover {
     background-color: var(--red-color);    
@@ -47,9 +47,9 @@
 .cards {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 100px;
     margin-top: 50px;
 }
 .card {
@@ -125,4 +125,15 @@
 
 .card_button:hover {
   background-color: #cc0000;
+}
+
+@media(max-width:700px) {
+  .container {
+    margin-top: 50px;
+  }
+}
+@media(max-width:400px) {
+  .card_list {
+    margin-top: 0;
+  }
 }
