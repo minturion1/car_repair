@@ -26,6 +26,7 @@
     text-decoration: underline;
 }
 .barButton {
+    display: none;
     font-size: 20px;
     background-color: transparent;
     color: var(--white-color);
@@ -76,5 +77,8 @@
 @media(max-width:600px) {
     .right {
         display: none;
+    }
+    .barButton {
+        display: block;
     }
 }

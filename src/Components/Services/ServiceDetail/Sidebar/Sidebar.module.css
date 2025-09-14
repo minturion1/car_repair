@@ -10,3 +10,10 @@
     
 }
 
+@media(max-width:1000px) {
+    .container {
+        position: static;
+        margin: auto;
+    }
+
+}

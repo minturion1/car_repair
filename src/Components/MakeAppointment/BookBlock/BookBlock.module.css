@@ -1,9 +1,10 @@
 .container {
-    padding: 200px;
+    padding: var(--side-margin);
 }
 
 .title {
-    font-size: 72px;
+    font-size: var(--title1-size);
     color: var(--white-color);
     text-align: center;
 }
+

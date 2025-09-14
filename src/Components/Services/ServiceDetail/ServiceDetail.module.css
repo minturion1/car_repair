@@ -3,7 +3,7 @@
 .main {
     display: flex;
     flex-direction: row;
-    padding: 10px 200px;
+    padding: 10px var(--side-margin);
     gap: 50px;
     align-items: flex-start;
     width: 100%;
@@ -14,10 +14,16 @@
     flex: 4;
 }
 .navigation {
-    padding: 50px 200px;
+    padding: 50px var(--side-margin);
 }
 .way {
-    font-size: 16px;
+    font-size: var(--par2-size);
     color: var(--grey-color);
-    padding: 0px 200px;
+    padding: 0px var(--side-margin);
+}
+
+@media(max-width:1000px) {
+    .main {
+        flex-direction: column;
+    }
 }

@@ -116,3 +116,10 @@
 .loadButton:hover {
   background-color: var(--red-color);
 }
+
+
+@media(max-width:600px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}

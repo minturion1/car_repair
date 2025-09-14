@@ -1,11 +1,11 @@
 .container {
 }
 .way {
-    font-size: 16px;
+    font-size: var(--par2-size);
     color: var(--grey-color);
 }
 .title {
-    font-size: 50px;
+    font-size: var(--title2-size);
     font-weight: bold;
     line-height: 1.2;
     color: var(--red-color);
@@ -20,6 +20,6 @@
     color: var(--grey-color);
     line-height: 1.5;
     margin-top: 50px;
-    font-size: 18px;
+    font-size: var(--par1-size);
     
 }

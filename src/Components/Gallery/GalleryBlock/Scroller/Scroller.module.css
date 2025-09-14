@@ -50,9 +50,11 @@
   margin-left: 30px;
 }
 
-/* Мобільні: ховаємо стрілки */
 @media (max-width: 768px) {
   .arrow {
     display: none;
+  }
+  .serviceCard {
+    min-width: 100px;
   }
 }

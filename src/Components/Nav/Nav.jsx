@@ -46,7 +46,7 @@ function Nav() {
             transition={{ duration: 0.2, ease: "easeInOut" }}
           >
             <div className={s.modalTop}>
-              <div className={s.modalTitle}>AutoWorks</div>
+              <NavLink to="/" className={s.modalTitle}>AutoWorks</NavLink>
               <i
                 onClick={onModalClick}
                 className={`fa-solid fa-xmark ${s.modalCross}`}

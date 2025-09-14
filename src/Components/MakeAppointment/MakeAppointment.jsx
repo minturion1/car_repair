@@ -9,7 +9,7 @@ function MakeAppointment() {
         <div className={s.container}>
             <Header />
             <BookBlock />
-            <ContactsBlock />
+            {/* <ContactsBlock /> */}
             <Footer />
         </div>
     );

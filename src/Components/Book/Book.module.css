@@ -3,14 +3,14 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    margin: 20px 200px;
+    margin: 20px var(--side-margin);
     padding: 150px 100px;
     border-radius: 20px;
 }
 .title {
     max-width: 500px;
     color: var(--white-color);
-    font-size: 50px;
+    font-size: var(--title2-size);
     font-weight: bold;
     margin-top: 10px;
 }
@@ -22,10 +22,22 @@
     padding: 20px 30px;
     margin-top: 20px;
     border: 1px solid var(--red-color);
-    font-size: 25px;
+    font-size: var(--title3-size);
     color: var(--white-color);
     transition: 0.2s;
 }
 .button:hover {
     background-color: var(--red-color);
+}
+
+@media(max-width:700px) {
+    .container {
+        top: 0;
+        padding: 50px;
+    }
+}
+@media(max-width:500px) {
+    .container {
+        padding: 10px;
+    }
 }

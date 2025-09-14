@@ -2,7 +2,7 @@
     background-position: center;
     background-size: cover;
     position: relative;
-    padding: 50px 200px;
+    padding: 50px var(--side-margin);
     
 }
 
@@ -39,7 +39,7 @@
     margin: auto;
     text-align: center;
     color: var(--white-color);
-    font-size: 28px;
+    font-size: var(--title3-size);
     font-weight: bold;
     line-height: 1.2;
     margin-top: 20px;
@@ -101,4 +101,28 @@
 
  .skeleton {
     margin: 20px 200px;
+ }
+
+ @media(max-width:1000px) {
+    .list {
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    
+}
+ }
+
+  @media(max-width:700px) {
+    .icon {
+        width: 50px;
+    }
+    .par {
+        display: none;
+    }
+    .overlay {
+        display: none;
+    }
+ }
+ @media(max-width:400px) {
+    .list {
+        gap: 10px;
+    }
  }

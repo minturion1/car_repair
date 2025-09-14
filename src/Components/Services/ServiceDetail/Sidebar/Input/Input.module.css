@@ -3,6 +3,7 @@
     width: 100%;
 }
 .input {
+    
     display: inline-block;
     background-color: transparent;
     color: var(--grey-color);
@@ -26,4 +27,14 @@
   color: var(--grey-color);
   pointer-events: none;
   
+}
+@media(max-width:1000px) {
+    .container {
+        width: auto;
+    }
+    .input {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+    }
 }
