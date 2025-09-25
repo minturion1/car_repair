@@ -2,7 +2,7 @@
     
     margin: var(--side-margin);
     display: flex;
-    box-sizing: border-box;
+    
     flex-direction: row;
     gap: 50px;
     justify-content: space-between;

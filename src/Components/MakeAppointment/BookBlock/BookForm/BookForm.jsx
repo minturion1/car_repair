@@ -79,7 +79,7 @@ function BookForm() {
             return;
         }
 
-        axios.post("https://car-repair-backend-79o5.onrender.com/api/v1/appointments/", formData)
+        axios.post("https://car-repair.api.minturion.com/api/v1/appointments/", formData)
             .then(res => {
             console.log(res.data);
             setIsModalOpen(true);

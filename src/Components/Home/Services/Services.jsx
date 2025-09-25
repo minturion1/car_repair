@@ -12,7 +12,7 @@ function Services() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get("https://car-repair-backend-79o5.onrender.com/api/v1/services/")
+        axios.get("https://car-repair.api.minturion.com//api/v1/services/")
         .then((response) => {
             setServices(response.data);
             setLoading(false);
