@@ -11,8 +11,10 @@ import ContactUs from './Components/ContactUs/ContactUs';
 function App() {
   return (
     <>
+    
     <BrowserRouter>
     <ScrollToTop />
+    
       <Routes>
         <Route path="/" element={<Home />}/> 
         <Route path="/make-an-appointment" element={<MakeAppointment />} /> 
@@ -22,6 +24,7 @@ function App() {
         <Route path="/contact-us" element={<ContactUs />} /> 
       </Routes>
     </BrowserRouter>
+
     </>
     
   );

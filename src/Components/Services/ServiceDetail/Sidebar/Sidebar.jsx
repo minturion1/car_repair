@@ -5,33 +5,71 @@
     import ServiceCategories from './ServiceCategories/ServiceCategories';
     import Contacts from './Contacts/Contacts';
     import { useState } from 'react';
+    import Skeleton from 'react-loading-skeleton';
+    import { useQuery } from '@tanstack/react-query';
+    import { getServiceNames } from '../../../../api/servicesApi';
 
-    function Sidebar(props) {
-        console.log(props.services);
-        const [searchServices, setSearchServices] = useState(props.services);
+    function Sidebar() {
+        const { id } = useParams();
+        const {
+            data: services = [],
+            isLoading,
+            isError,
+            error,
+        } = useQuery({
+            queryKey: ["services", "names"],
+            queryFn: getServiceNames,
+            staleTime: 1000 * 60 * 5,
+            refetchOnWindowFocus: false,
+        });
         const [searchValue, setSearchValue] = useState('');
+        
+        console.log(services)
+        if (isLoading) {
+        return (
+        <div className={s.skeleton}>
+            <Skeleton
+            style={{ marginBottom: "20px", borderRadius: "20px" }}
+            baseColor="#2b2b2b"
+            highlightColor="#fff"
+            height={250}
+            width="100%"
+            />
+            <Skeleton
+            style={{ marginBottom: "20px", borderRadius: "20px" }}
+            baseColor="#2b2b2b"
+            highlightColor="#fff"
+            height={250}
+            width="100%"
+            />
+            <Skeleton
+            style={{ marginBottom: "20px", borderRadius: "20px" }}
+            baseColor="#2b2b2b"
+            highlightColor="#fff"
+            height={250}
+            width="100%"
+            />
+        </div>
+        );
+    }
 
+    if (isError) {
+        return <p style={{ color: "red" }}>Error: {error.message}</p>;
+    }
         function onSearchChange(value) {
             setSearchValue(value);
-            setSearchServices(props.services.filter(service =>
-                service.name.toLowerCase().includes(value.toLowerCase())
-            ));
         }
         function resetSearch() {
             setSearchValue('');
-            setSearchServices(props.services);
         }
+        const filteredServices = services.filter(service =>
+        service.name.toLowerCase().includes(searchValue.toLowerCase())
+        );
 
-        const { id } = useParams();
-        const service = props.services.find((s) => s.id === Number(id));
-
-        if (!service) {
-                return <h2>Service id={id} has not been found</h2>; 
-            }
         return (
             <div className={s.container}>
                 <Input onSearchChange={onSearchChange} searchValue={searchValue} />
-                <ServiceCategories resetSearch={resetSearch} services={searchServices}/>
+                <ServiceCategories resetSearch={resetSearch} services={filteredServices}/>
                 <Contacts />
             </div>
         );

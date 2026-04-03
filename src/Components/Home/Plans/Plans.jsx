@@ -33,11 +33,11 @@ function Plans() {
                     </div>
                 </div>
                 <div className={s.card_list}>
-                    <div className={s.card_item}><i class="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
-                    <div className={s.card_item}><i class="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
-                    <div className={s.card_item}><i class="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
-                    <div className={s.card_item}><i class="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
-                    <div className={s.card_item}><i class="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
+                    <div className={s.card_item}><i className="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
+                    <div className={s.card_item}><i className="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
+                    <div className={s.card_item}><i className="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
+                    <div className={s.card_item}><i className="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
+                    <div className={s.card_item}><i className="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
                 </div>
                 <div className={s.card_button}>Get Started</div>
             </div>
@@ -56,11 +56,11 @@ function Plans() {
                     </div>
                 </div>
                 <div className={s.card_list}>
-                    <div className={s.card_item}><i class="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
-                    <div className={s.card_item}><i class="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
-                    <div className={s.card_item}><i class="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
-                    <div className={s.card_item}><i class="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
-                    <div className={s.card_item}><i class="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
+                    <div className={s.card_item}><i className="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
+                    <div className={s.card_item}><i className="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
+                    <div className={s.card_item}><i className="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
+                    <div className={s.card_item}><i className="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
+                    <div className={s.card_item}><i className="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
                 </div>
                 <div className={s.card_button}>Get Started</div>
             </div>
@@ -79,11 +79,11 @@ function Plans() {
                     </div>
                 </div>
                 <div className={s.card_list}>
-                    <div className={s.card_item}><i class="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
-                    <div className={s.card_item}><i class="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
-                    <div className={s.card_item}><i class="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
-                    <div className={s.card_item}><i class="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
-                    <div className={s.card_item}><i class="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
+                    <div className={s.card_item}><i className="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
+                    <div className={s.card_item}><i className="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
+                    <div className={s.card_item}><i className="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
+                    <div className={s.card_item}><i className="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
+                    <div className={s.card_item}><i className="fa-solid fa-circle-check"></i> Includes up to 5 quarts of conventional oil</div>
                 </div>
                 <div className={s.card_button}>Get Started</div>
             </div>

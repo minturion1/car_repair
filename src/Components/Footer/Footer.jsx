@@ -32,10 +32,10 @@ function Footer() {
                         Reach to Us
                     </div>
                     <div className={s.column_list}>
-                        <div className={s.column_item}><i class="fa-solid fa-location-dot"></i> 1271 Gladstone Rd, Nassau, Bahamas</div>
-                        <div className={s.column_item}><i class="fa-solid fa-phone"></i> +1 234-789-0876</div>
-                        <div className={s.column_item}><i class="fa-solid fa-envelope"></i> hello@autoworks.com</div>
-                        <div className={s.column_item}><i class="fa-solid fa-globe"></i>www.autoworks.com</div>
+                        <div className={s.column_item}><i className="fa-solid fa-location-dot"></i> 1271 Gladstone Rd, Nassau, Bahamas</div>
+                        <div className={s.column_item}><i className="fa-solid fa-phone"></i> +1 234-789-0876</div>
+                        <div className={s.column_item}><i className="fa-solid fa-envelope"></i> hello@autoworks.com</div>
+                        <div className={s.column_item}><i className="fa-solid fa-globe"></i>www.autoworks.com</div>
                     </div>
                 </div>
                 <div className={s.column}>
@@ -54,10 +54,10 @@ function Footer() {
                         Connect with Us
                     </div>
                     <div className={s.column_list}>
-                        <a href='#' className={`${s.column_item} ${s.link}`}><i class="fa-brands fa-square-youtube"></i> Youtube</a>
-                        <a href='#' className={`${s.column_item} ${s.link}`}><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                        <a href='#' className={`${s.column_item} ${s.link}`}><i class="fa-brands fa-square-twitter"></i> Twitter</a>
-                        <a href='#' className={`${s.column_item} ${s.link}`}><i class="fa-brands fa-square-instagram"></i>Instagram</a>
+                        <a href='#' className={`${s.column_item} ${s.link}`}><i className="fa-brands fa-square-youtube"></i> Youtube</a>
+                        <a href='#' className={`${s.column_item} ${s.link}`}><i className="fa-brands fa-linkedin"></i> LinkedIn</a>
+                        <a href='#' className={`${s.column_item} ${s.link}`}><i className="fa-brands fa-square-twitter"></i> Twitter</a>
+                        <a href='#' className={`${s.column_item} ${s.link}`}><i className="fa-brands fa-square-instagram"></i>Instagram</a>
                     </div>
                 </div>
             </div>

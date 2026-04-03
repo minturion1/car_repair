@@ -14,11 +14,10 @@ function Services() {
     isError,
     error,
   } = useQuery({
-    queryKey: ["services"],
-    queryFn: getServices,
+    queryKey: ["services", 3],
+    queryFn: ()=> (getServices(3)),
     staleTime: 1000 * 60 * 5,
-    refetchInterval: 1000 * 60 * 5,
-    refetchOnWindowFocus: true,
+    refetchOnWindowFocus: false,
   });
     console.log(services)
     if (isLoading) {
@@ -56,9 +55,12 @@ function Services() {
         </div>
         
         <div className={s.list}>
-            {services.slice(0,4).map(service=> {
+            {services.map(service=> {
                 return(
-                <NavLink to={`/services/${service.id}`} style={{ backgroundImage: `url(${baseURL + service.image.url})` }} className={`${s.service} ${s.engine}`}>
+                <NavLink key={service.id} to={`/services/${service.documentId}`} style={{ backgroundImage: service.image?.url
+                      ? `url(${baseURL + service.image.url})`
+                      : "none"
+                  }} className={`${s.service} ${s.engine}`}>
                     <div className={s.service_name}>
                         {service.name}
                     </div>

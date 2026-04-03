@@ -10,7 +10,7 @@ function ServiceCategories(props) {
             <div className={s.list}>
                 {props.services && props.services.length > 0 ? (
                     props.services.map(service => (
-                        <NavLink onClick={()=>props.resetSearch()} to={`/services/${service.id}`} key={service.id} className={({ isActive }) =>
+                        <NavLink onClick={()=>props.resetSearch()} to={`/services/${service.documentId}`} key={service.id} className={({ isActive }) =>
                             isActive ? `${s.item} ${s.active}` : s.item
                             }>
                             {service.name}

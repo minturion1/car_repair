@@ -22,7 +22,7 @@ function Nav() {
   return (
     <div className={s.nav}>
         <NavLink to="/" className={s.logo}>AutoWorks</NavLink>
-        <button onClick={onModalClick} className={s.barButton}><i class="fa-solid fa-bars"></i></button>
+        <button onClick={onModalClick} className={s.barButton}><i className="fa-solid fa-bars"></i></button>
         <div className={s.right}>
             <div className={s.links_list}>
                 <NavLink to="/services" className={({ isActive }) => isActive ? `${s.link} ${s.active}` : s.link}>

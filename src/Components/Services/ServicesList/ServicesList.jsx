@@ -5,32 +5,60 @@ import {useState, useEffect} from 'react';
 import axios from "axios";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { useQuery } from '@tanstack/react-query';
+import { baseURL, getServices } from '../../../api/servicesApi';
 
 function ServicesList() {
-  const [services, setServices] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const {
+    data: services = [],
+    isLoading,
+    isError,
+    error,
+  } = useQuery({
+    queryKey: ["services", "all"],
+    queryFn: getServices,
+    staleTime: 1000 * 60 * 5,
+    refetchOnWindowFocus: false,
+  });
+    console.log(services)
+    if (isLoading) {
+    return (
+      <div className={s.skeleton}>
+        <Skeleton
+          style={{ marginBottom: "20px", borderRadius: "20px" }}
+          baseColor="#2b2b2b"
+          highlightColor="#fff"
+          height={250}
+          width="100%"
+        />
+        <Skeleton
+          style={{ marginBottom: "20px", borderRadius: "20px" }}
+          baseColor="#2b2b2b"
+          highlightColor="#fff"
+          height={250}
+          width="100%"
+        />
+        <Skeleton
+          style={{ marginBottom: "20px", borderRadius: "20px" }}
+          baseColor="#2b2b2b"
+          highlightColor="#fff"
+          height={250}
+          width="100%"
+        />
+      </div>
+    );
+  }
 
-  useEffect(() => {
-    axios.get("https://car-repair.api.minturion.com/api/v1/services/")
-      .then((response) => {
-        setServices(response.data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setError(error);
-        setLoading(false);
-      });
-  }, []);
-  if (loading) return <div className={s.skeleton}><Skeleton style={{ marginBottom: "20px", borderRadius: "20px" }} baseColor="#2b2b2b" highlightColor="#fff" count={3} height={400} width="100%" /></div>;
-  if (error) return <p style={{ color: "red" }}>Error: {error.message}</p>;
+  if (isError) {
+    return <p style={{ color: "red" }}>Error: {error.message}</p>;
+  }
   return (
     <div className={s.container}>
         <div className={s.list}>
             {services.map((service) => {
             return(
-                <NavLink key={service.id} to={`/services/${service.id}`} className={s.card}>
-                  <img alt={service.id} src={service.icon} className={s.icon}></img>
+                <NavLink key={service.id} to={`/services/${service.documentId}`} className={s.card}>
+                  <img alt={service.id} src={`${baseURL}${service.icon.url}`} className={s.icon}></img>
                   <div className={s.title}>{service.name}</div>
                   <div className={s.par}>{service.description}</div>
                   <div className={s.overlay}>

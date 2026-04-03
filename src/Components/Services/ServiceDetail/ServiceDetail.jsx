@@ -9,31 +9,13 @@ import Nav from '../../Nav/Nav';
 import Features from './Features/Features';
 import Book from '../../Book/Book';
 import FAQ from '../../FAQ/FAQ';
+import { useQuery } from '@tanstack/react-query';
+import { getServiceById } from '../../../api/servicesApi';
+import Skeleton from 'react-loading-skeleton';
+import ServiceDetailContent from './ServiceDetailContent';
 
 function ServiceDetail() {
-    const [services, setServices] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    const { id } = useParams();
-
-    useEffect(() => {
-        axios.get("https://car-repair.api.minturion.com/api/v1/services/")
-        .then((response) => {
-            setServices(response.data);
-            setLoading(false);
-        })
-        .catch((error) => {
-            setError(error);
-            setLoading(false);
-        });
-    }, []);
-    if (loading) return ;
     
-    const service = services.find((s) => s.id === Number(id));
-
-     if (!service) {
-            return <h2>Service id={id} has not found</h2>; 
-        }
     return (
         <div className={s.container}>
             <div className={s.navigation}>
@@ -41,14 +23,8 @@ function ServiceDetail() {
             </div>
             <div className={s.way}>Home / Services / Details</div>
             <div className={s.main}>
-                <div className={s.mainContent}>
-
-                    <Header service={service}/>
-                    <Features features={service.features} />
-                    <FAQ />
-                    
-                </div>
-                <Sidebar services={services} />
+                <ServiceDetailContent />
+                <Sidebar />
             </div>
             
             <Book />
