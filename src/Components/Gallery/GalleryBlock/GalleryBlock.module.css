@@ -1,3 +1,8 @@
 .container {
     padding: 50px var(--side-margin);
 }
+.empty {
+  text-align: center;
+  padding: 40px;
+  color: #aaa;
+}

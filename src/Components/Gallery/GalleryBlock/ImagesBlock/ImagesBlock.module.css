@@ -2,7 +2,7 @@
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   padding: 16px;
 }
@@ -115,6 +115,15 @@
 }
 .loadButton:hover {
   background-color: var(--red-color);
+}
+
+.image {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.image.loaded {
+  opacity: 1;
 }
 
 

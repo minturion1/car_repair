@@ -1,9 +1,14 @@
 import React, { useRef } from "react";
 import s from './Scroller.module.css';
 import services from '../../../Services/ServicesList/ServicesListData'
+import { useQuery } from "@tanstack/react-query";
+import { getServiceNames } from "../../../../api/servicesApi";
+import Skeleton from "react-loading-skeleton";
 
 
 export default function Scroller(props) {
+
+  
   const carouselRef = useRef(null);
 
   const scroll = (direction) => {
@@ -16,6 +21,35 @@ export default function Scroller(props) {
     }
   };
 
+  const {
+    data: services = [],
+    isLoading,
+    isError,
+    error,
+  } = useQuery({
+    queryKey: ["services", "all"],
+    queryFn: getServiceNames,
+    staleTime: 1000 * 60 * 5,
+    refetchOnWindowFocus: false,
+  });
+    if (isLoading) {
+    return (
+      <div className={s.skeleton}>
+        <Skeleton
+          style={{ marginBottom: "20px", borderRadius: "20px" }}
+          baseColor="#2b2b2b"
+          highlightColor="#fff"
+          height={100}
+          width="100%"
+        />
+      </div>
+    );
+  }
+
+  if (isError) {
+    return <p style={{ color: "red" }}>Error: {error.message}</p>;
+  }
+
   return (
     <div className={s.carouselWrapper}>
       <button className={`${s.arrow} ${s.left}`} onClick={() => scroll("left")}>
@@ -23,12 +57,12 @@ export default function Scroller(props) {
       </button>
 
       <div className={s.serviceCarousel} ref={carouselRef}>
-        <div onClick={() => props.onFilter("all")} className={!props.filteredServiceId ? `${s.active} ${s.serviceCard}` : `${s.serviceCard}`}>
+        <div onClick={() => props.setServiceId("all")} className={props.serviceId==='all' ? `${s.active} ${s.serviceCard}` : `${s.serviceCard}`}>
             All
           </div>
         {services.map((service, index) => (
-          <div onClick={()=> {props.onFilter(service.id)}} className={props.filteredServiceId===service.id ? `${s.active} ${s.serviceCard}` : `${s.serviceCard}`} key={index}>
-            {service.title}
+          <div onClick={()=> {props.setServiceId(service.documentId)}} className={props.serviceId===service.documentId ? `${s.active} ${s.serviceCard}` : `${s.serviceCard}`} key={index}>
+            {service.name}
           </div>
         ))}
       </div>
