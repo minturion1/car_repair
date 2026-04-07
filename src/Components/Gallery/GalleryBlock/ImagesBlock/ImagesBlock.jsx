@@ -9,7 +9,7 @@ import { useQuery } from '@tanstack/react-query';
 
 function ImagesBlock(props) {
     const images = props.images;
-    const [visibleCount,setVisiblecount] = useState(10);
+    const [visibleCount,setVisiblecount] = useState(6);
     const [openImageId, setOpenImageId] = useState(null);
     
     const {
@@ -72,14 +72,14 @@ function ImagesBlock(props) {
     return(
         <div className={s.container}>
             <div className={s.gallery}>
-                {openImageId && image && (
+                {openImageId && (
                     <ImageModal previousImage={previousImage} nextImage={nextImage} openedImage={image} onClose={onClose}/>
 
                 )}
                 
                 {images.slice(0,visibleCount).map((img, index) => (
                 
-                <div className={s.galleryItem} key={index}>
+                <div className={s.galleryItem} key={img.documentId}>
                     <img loading="lazy" onClick={()=>{imageClick(img.documentId)}} src={`${baseURL}${img.image.url}`} alt={img.caption} />
                 </div>
             ))}
