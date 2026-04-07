@@ -4,6 +4,9 @@ import BookInput from './BookInput/BookInput';
 import { useState } from 'react';
 import validateField from './validateField';
 import axios from 'axios';
+import { useMutation } from '@tanstack/react-query';
+import { useCreateAppointment } from '../../../../hooks/useCreateAppointment';
+import { useForm } from '../../../../hooks/useForm';
 
 const initialFormData = {
     name:"",
@@ -18,24 +21,31 @@ const initialFormData = {
     services: [],
 }
 function BookForm() {
-    const [formData, setFormData] = useState(initialFormData);
-    const [formErrors, setFormErrors] = useState({});
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [isBlocked, setIsBlocked] = useState(false);
+    const {
+        formData,
+        formErrors,
+        handleChange,
+        validateForm,
+        resetForm,
+        setFormData,
+        setFormErrors,
+    } = useForm(initialFormData, validateField)
 
-    
-    function onFormChange(field,value) {
-        setFormData(data=>({
-            ...data,
-            [field]: value,
-        }))
-        const error = validateField(field, value);
-        
-        setFormErrors(errors => ({
-            ...errors,
-            [field]: value===""?"":error,
-        }));
-    }
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const mutation = useCreateAppointment({
+        onSuccess: (res) => {
+            console.log(res.data);
+            setIsModalOpen(true);
+            resetForm();
+            setTimeout(() => setIsModalOpen(false), 3000);
+        },
+        onError: (err) => {
+            console.error(err);
+            alert("Error creating appointment");
+        }
+    });
+
     function onServiceClick(serviceId, serviceName) {
         const service={
             id: serviceId,
@@ -59,37 +69,12 @@ function BookForm() {
         });
     }
     function submitForm() {
-        if (isBlocked) return;
-        setIsBlocked(true);
-        setTimeout(() => setIsBlocked(false), 5000);
-        const requiredFields = ["name", "phone", "make", "model", "year", "date", "time"];
+        const isValid = validateForm(["name", "phone", "make", "model", "year", "date", "time"]);
 
-        for (let field of requiredFields) {
-            if (!formData[field] || formData[field].toString().trim() === "") {
-            setFormErrors(errors => ({
-                ...errors,
-                [field]: "This field is required",
-            }));
-            return; 
-            }
-        }
+        if (!isValid) return;
 
-        const hasErrors = Object.values(formErrors).some(err => err && err.length > 0);
-        if (hasErrors) {
-            return;
-        }
-
-        axios.post("https://car-repair.api.minturion.com/api/v1/appointments/", formData)
-            .then(res => {
-            console.log(res.data);
-            setIsModalOpen(true);
-            setTimeout(() => setIsModalOpen(false), 3000);
-            })
-            .catch(err => {
-            console.error(err);
-            alert("Error creating appointment");
-            });
-        }
+        mutation.mutate(formData);
+    }
 
     
     return (
@@ -99,22 +84,31 @@ function BookForm() {
             </div>
 
             <div className={s.grid}>
-                <BookInput error={formErrors.name} onFormChange={onFormChange} required={true} value={formData.name} title="Your Name" name="name" />
-                <BookInput error={formErrors.phone} onFormChange={onFormChange} required={true} value={formData.phone} title="Phone Number" name="phone" />
-                <BookInput error={formErrors.email} onFormChange={onFormChange}  value={formData.email} title="Email Address" name="email" />
-                <BookInput error={formErrors.make} onFormChange={onFormChange} required={true} value={formData.make} title="Make" name="make" />
-                <BookInput error={formErrors.model} onFormChange={onFormChange} required={true} value={formData.model} title="Model" name="model" />
-                <BookInput error={formErrors.year} onFormChange={onFormChange} required={true} value={formData.year} title="Year" name="year" />
+                <BookInput error={formErrors.name} onFormChange={handleChange} required={true} value={formData.name} title="Your Name" name="name" />
+                <BookInput error={formErrors.phone} onFormChange={handleChange} required={true} value={formData.phone} title="Phone Number" name="phone" />
+                <BookInput error={formErrors.email} onFormChange={handleChange}  value={formData.email} title="Email Address" name="email" />
+                <BookInput error={formErrors.make} onFormChange={handleChange} required={true} value={formData.make} title="Make" name="make" />
+                <BookInput error={formErrors.model} onFormChange={handleChange} required={true} value={formData.model} title="Model" name="model" />
+                <BookInput error={formErrors.year} onFormChange={handleChange} required={true} value={formData.year} title="Year" name="year" />
             </div>
                 
             <div className={s.title}>Appointment Details</div>
             <div className={s.grid}>
-                <BookInput error={formErrors.date} onFormChange={onFormChange} required={true} value={formData.date} type="date" title="Date" name="date" />
-                <BookInput error={formErrors.time} onFormChange={onFormChange} required={true} value={formData.time} type="time" title="Time" name="time" />
-                <BookInput error={formErrors.location} onFormChange={onFormChange} value={formData.location} title="Location" name="location" />
+                <BookInput error={formErrors.date} onFormChange={handleChange} required={true} value={formData.date} type="date" title="Date" name="date" />
+                <BookInput error={formErrors.time} onFormChange={handleChange} required={true} value={formData.time} type="time" title="Time" name="time" />
+                <BookInput error={formErrors.location} onFormChange={handleChange} value={formData.location} title="Location" name="location" />
             </div>
             <ServicesNeeded formData={formData} onServiceClick={onServiceClick} />
-            <button onClick={(e)=>{e.preventDefault();submitForm()}} className={s.button}>Make an Appointment</button>
+            <button
+                onClick={(e) => {
+                    e.preventDefault();
+                    submitForm();
+                }}
+                disabled={mutation.isPending}
+                className={s.button}
+            >
+                {mutation.isPending ? "Sending..." : "Make an Appointment"}
+            </button>
         </form>
     )
 }

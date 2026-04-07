@@ -3,25 +3,53 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { getServiceNames } from '../../../../api/servicesApi';
+import { useQuery } from '@tanstack/react-query';
 
 function ServicesNeeded(props) {
-    const [services, setServices] = useState([]);
-      const [loading, setLoading] = useState(true);
-      const [error, setError] = useState(null);
-    
-      useEffect(() => {
-        axios.get("https://car-repair.api.minturion.com/api/v1/services/")
-          .then((response) => {
-            setServices(response.data);
-            setLoading(false);
-          })
-          .catch((error) => {
-            setError(error);
-            setLoading(false);
-          });
-      }, []);
-      if (loading) return <div className={s.skeleton}><Skeleton style={{ marginBottom: "20px", borderRadius: "20px" }} baseColor="#2b2b2b" highlightColor="#fff" height={400} width="100%" /></div>;
-      if (error) return <p style={{ color: "red" }}>Error: {error.message}</p>;
+   const {
+      data: services = [],
+      isLoading,
+      isError,
+      error,
+    } = useQuery({
+      queryKey: ["services", "appointment"],
+      queryFn: getServiceNames,
+      staleTime: 1000 * 60 * 5,
+      refetchOnWindowFocus: false,
+    });
+      console.log(services)
+      if (isLoading) {
+      return (
+        <div className={s.skeleton}>
+          <Skeleton
+            style={{ marginBottom: "20px", borderRadius: "20px" }}
+            baseColor="#2b2b2b"
+            highlightColor="#fff"
+            height={250}
+            width="100%"
+          />
+          <Skeleton
+            style={{ marginBottom: "20px", borderRadius: "20px" }}
+            baseColor="#2b2b2b"
+            highlightColor="#fff"
+            height={250}
+            width="100%"
+          />
+          <Skeleton
+            style={{ marginBottom: "20px", borderRadius: "20px" }}
+            baseColor="#2b2b2b"
+            highlightColor="#fff"
+            height={250}
+            width="100%"
+          />
+        </div>
+      );
+    }
+
+    if (isError) {
+      return <p style={{ color: "red" }}>Error: {error.message}</p>;
+    }
     return (
         <div className={s.container}>
             <div className={s.label}>Select Services Needed</div>

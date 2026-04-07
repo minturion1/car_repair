@@ -1,7 +1,6 @@
 import ImageModal from './ImageModal/ImageModal';
 import s from './ImagesBlock.module.css';
-import { useState, useEffect } from 'react';
-import Skeleton from "react-loading-skeleton";
+import { useState } from 'react';
 import "react-loading-skeleton/dist/skeleton.css";
 import { baseURL } from '../../../../api/servicesApi';
 import { getImageById } from '../../../../api/galleryApi';

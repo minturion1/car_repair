@@ -1,6 +1,8 @@
 import s from './ContactForm.module.css';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState } from 'react';
+import { useCreateContact } from '../../../../hooks/useCreateContact';
+import validateField from './validateField';
+import { useForm } from '../../../../hooks/useForm';
 
 const initialFormData = {
     name:"",
@@ -9,30 +11,34 @@ const initialFormData = {
 }
 
 export default function ContactForm() {
-    const [formData, setFormData] = useState(initialFormData);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [isBlocked, setIsBlocked] = useState(false);
+    const {
+        formData,
+        formErrors,
+        handleChange,
+        validateForm,
+        resetForm,
+    } = useForm(initialFormData, validateField);
 
-    function onFormChange(fieldName, value) {
-        setFormData(prev=>({
-                    ...prev,
-                    [fieldName]: value,
-                }))
-    }
-    function onFormSubmit() {
-        if (isBlocked) return;
-        setIsBlocked(true);
-        setTimeout(() => setIsBlocked(false), 5000);
-        axios.post("https://car-repair.api.minturion.com//api/v1/contacts/", formData)
-            .then(res => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    
+    const mutation = useCreateContact({
+            onSuccess: (res) => {
+                console.log(res.data);
+                resetForm();
                 setIsModalOpen(true);
                 setTimeout(() => setIsModalOpen(false), 3000);
-                console.log(res.data);
-            })
-            .catch(err => {
-            console.error(err);
-            alert("Error creating contact");
-            });
+            },
+            onError: (err) => {
+                console.error(err);
+                alert("Error creating contact");
+            }
+        });
+
+    function onFormSubmit() {
+        const isValid = validateForm(["name", "phone", "message"]);
+        if (!isValid) return;
+
+        mutation.mutate(formData);
     }
     return (
         <div className={s.container}>
@@ -43,18 +49,42 @@ export default function ContactForm() {
             <div className={s.top_inputs}>
                 <div className={s.input_container}>
                     <label className={s.label} htmlFor="your_name">Your Name</label>
-                    <input onChange={(e)=>{onFormChange("name", e.target.value)}} className={s.input} value={formData.name}  name="your_name" id="your_name" type="text" />
+                    <input
+                        onChange={(e) => handleChange("name", e.target.value)}
+                        className={s.input}
+                        value={formData.name}
+                    />
+                    {formErrors.name && <div className={s.error}>{formErrors.name}</div>}
                 </div>
                 <div className={s.input_container}>
                     <label className={s.label}  htmlFor="phone_number">Phone Number</label>
-                    <input onChange={(e)=>{onFormChange("phone", e.target.value)}}  className={s.input} value={formData.phone} name="phone_number" id="phone_number" type="text" />
+                    <input
+                        onChange={(e) => handleChange("phone", e.target.value)}
+                        className={s.input}
+                        value={formData.phone}
+                    />
+                    {formErrors.phone && <div className={s.error}>{formErrors.phone}</div>}
                 </div>
             </div>
             <div className={s.area_container}>
                 <label className={s.label}  htmlFor="text">Your message</label>
-                <textarea onChange={(e)=>{onFormChange("message", e.target.value)}}  className={`${s.input} ${s.area}`} value={formData.message} name="text" id="text"></textarea>
+                <textarea
+                    onChange={(e) => handleChange("message", e.target.value)}
+                    className={`${s.input} ${s.area}`}
+                    value={formData.message}
+                />
+                {formErrors.message && <div className={s.error}>{formErrors.message}</div>}
             </div>
-            <button onClick={onFormSubmit} className={s.button}>Send Message</button>
+            <button
+                onClick={(e) => {
+                    e.preventDefault();
+                    onFormSubmit();
+                }}
+                disabled={mutation.isPending}
+                className={s.button}
+            >
+                {mutation.isPending ? "Sending..." : "Send message"}
+            </button>
         </div>
     )
 }

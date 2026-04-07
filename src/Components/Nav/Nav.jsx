@@ -2,6 +2,8 @@ import s from './Nav.module.css';
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
+import { GrSchedules } from "react-icons/gr";
+
 
 function Nav() {
   const [isModalOpen,setIsModalOpen] = useState(false);
@@ -34,6 +36,10 @@ function Nav() {
                 <NavLink to="/contact-us" className={({ isActive }) => isActive ? `${s.link} ${s.active}` : s.link}>
                   Contacts
                 </NavLink>
+                 <NavLink to="/make-an-appointment" className={({ isActive }) => isActive ? `${s.book_link} ${s.book_active}` : s.book_link}>
+                  Make an Appointment <GrSchedules />
+
+                </NavLink> 
             </div>
         </div>
         <AnimatePresence>

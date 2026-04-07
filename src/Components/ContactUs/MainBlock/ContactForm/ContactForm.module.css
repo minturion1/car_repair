@@ -38,6 +38,21 @@
 .input:focus {
     border: 1px solid var(--red-color);
 }
+.inputError {
+  border-color: red;
+}
+
+.error {
+  font-size: var(--par2-size);
+  color: red;
+  margin-top: 4px;
+}
+.required {
+  color: red;
+  margin-left: 4px;
+}
+
+
 .area_container {
     margin-top: 50px;
     display: flex;
