@@ -1,13 +1,10 @@
+import { useQuery } from '@tanstack/react-query';
+import { useState } from 'react';
+import "react-loading-skeleton/dist/skeleton.css";
+import { getImages } from '../../../api/galleryApi';
 import s from './GalleryBlock.module.css';
 import ImagesBlock from './ImagesBlock/ImagesBlock';
 import Scroller from './Scroller/Scroller';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
-import { useQuery } from '@tanstack/react-query';
-import { getImages } from '../../../api/galleryApi';
-import ProgressBar from '../../comp/ProgressBar';
 
 function GalleryBlock() {
     const [serviceId, setServiceId] = useState('all');
