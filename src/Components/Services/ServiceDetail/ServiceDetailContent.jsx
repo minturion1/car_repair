@@ -1,12 +1,12 @@
+import { useQuery } from "@tanstack/react-query";
+import Skeleton from "react-loading-skeleton";
 import { useParams } from "react-router-dom";
+import { getServiceById } from "../../../api/servicesApi";
+import ProgressBar from "../../comp/ProgressBar";
 import FAQ from "../../FAQ/FAQ";
 import Features from "./Features/Features";
 import Header from "./Header/Header";
-import { useQuery } from "@tanstack/react-query";
-import { getServiceById } from "../../../api/servicesApi";
-import Skeleton from "react-loading-skeleton";
-import s from './ServiceDetail.module.css'
-import ProgressBar from "../../comp/ProgressBar";
+import s from './ServiceDetail.module.css';
 
 
 function ServiceDetailContent() {

@@ -1,8 +1,8 @@
-import s from './ContactForm.module.css';
 import { useState } from 'react';
 import { useCreateContact } from '../../../../hooks/useCreateContact';
-import validateField from './validateField';
 import { useForm } from '../../../../hooks/useForm';
+import s from './ContactForm.module.css';
+import validateField from './validateField';
 
 const initialFormData = {
     name:"",

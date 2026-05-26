@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import s from './ImageModal.module.css';
-import { baseURL } from "../../../../../api/baseUrl";
 
 export default function ImageModal(props) {
   const [loaded, setLoaded] = useState(false);

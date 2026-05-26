@@ -1,13 +1,9 @@
-import services from './ServicesListData';
-import s from './ServicesList.module.css';
-import { NavLink } from 'react-router-dom';
-import {useState, useEffect} from 'react';
-import axios from "axios";
+import { useQuery } from '@tanstack/react-query';
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import { useQuery } from '@tanstack/react-query';
+import { NavLink } from 'react-router-dom';
 import { getServices } from '../../../api/servicesApi';
-import { baseURL } from '../../../api/baseUrl';
+import s from './ServicesList.module.css';
 
 function ServicesList() {
   const {

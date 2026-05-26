@@ -1,9 +1,8 @@
-import React, { useRef } from "react";
-import s from './Scroller.module.css';
-import services from '../../../Services/ServicesList/ServicesListData'
 import { useQuery } from "@tanstack/react-query";
-import { getServiceNames } from "../../../../api/servicesApi";
+import { useRef } from "react";
 import Skeleton from "react-loading-skeleton";
+import { getServiceNames } from "../../../../api/servicesApi";
+import s from './Scroller.module.css';
 
 
 export default function Scroller(props) {

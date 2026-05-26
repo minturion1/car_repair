@@ -1,8 +1,8 @@
-import Header from './Header/Header'
-import s from './Gallery.module.css';
+import Book from '.././Book/Book';
 import Footer from '../Footer/Footer';
+import s from './Gallery.module.css';
 import GalleryBlock from './GalleryBlock/GaleryBlock';
-import Book from '.././Book/Book'
+import Header from './Header/Header';
 
 function Gallery() {
     return (

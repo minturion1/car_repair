@@ -1,10 +1,9 @@
-import ImageModal from './ImageModal/ImageModal';
-import s from './ImagesBlock.module.css';
+import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
 import "react-loading-skeleton/dist/skeleton.css";
 import { getImageById } from '../../../../api/galleryApi';
-import { useQuery } from '@tanstack/react-query';
-import { baseURL } from '../../../../api/baseUrl';
+import ImageModal from './ImageModal/ImageModal';
+import s from './ImagesBlock.module.css';
 
 
 function ImagesBlock(props) {

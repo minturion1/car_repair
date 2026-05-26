@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import s from './Testimonials.module.css';
 import { clients } from './clientsData';
 

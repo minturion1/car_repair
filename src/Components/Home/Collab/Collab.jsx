@@ -1,11 +1,11 @@
 
 import s from './Collab.module.css';
-import tesla from './images/tesla.png';
-import toyota from './images/toyota.png';
 import hyundai from './images/hyundai.png';
+import jaguar from './images/jaguar.png';
 import mersedes from './images/mersedes.png';
 import suzuki from './images/suzuki.png';
-import jaguar from './images/jaguar.png';
+import tesla from './images/tesla.png';
+import toyota from './images/toyota.png';
 
 
 function Collab() {

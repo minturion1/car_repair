@@ -1,13 +1,13 @@
 
-    import { useParams } from 'react-router-dom';
-    import s from './Sidebar.module.css';
-    import Input from './Input/Input';
-    import ServiceCategories from './ServiceCategories/ServiceCategories';
-    import Contacts from './Contacts/Contacts';
-    import { useState } from 'react';
-    import Skeleton from 'react-loading-skeleton';
     import { useQuery } from '@tanstack/react-query';
-    import { getServiceNames } from '../../../../api/servicesApi';
+import { useState } from 'react';
+import Skeleton from 'react-loading-skeleton';
+import { useParams } from 'react-router-dom';
+import { getServiceNames } from '../../../../api/servicesApi';
+import Contacts from './Contacts/Contacts';
+import Input from './Input/Input';
+import ServiceCategories from './ServiceCategories/ServiceCategories';
+import s from './Sidebar.module.css';
 
     function Sidebar() {
         const { id } = useParams();

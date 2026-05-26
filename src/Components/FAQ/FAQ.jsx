@@ -1,7 +1,7 @@
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from 'react';
 import s from './FAQ.module.css';
 import FAQs from './FAQData';
-import { useState } from 'react';
-import { motion, AnimatePresence } from "framer-motion";
 
 function FAQ() {
     const [openFAQIds, setOpenFAQIds] = useState([]);

@@ -1,4 +1,4 @@
-import s from './ProgressBar.module.css'
+import s from './ProgressBar.module.css';
 
 function ProgressBar() {
   return (

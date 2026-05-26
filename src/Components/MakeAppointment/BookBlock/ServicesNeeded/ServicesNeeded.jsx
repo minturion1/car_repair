@@ -1,10 +1,8 @@
-import s from './ServicesNeeded.module.css';
-import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { getServiceNames } from '../../../../api/servicesApi';
-import { useQuery } from '@tanstack/react-query';
+import s from './ServicesNeeded.module.css';
 
 function ServicesNeeded(props) {
    const {

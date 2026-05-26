@@ -1,11 +1,10 @@
 
-import { NavLink } from 'react-router-dom';
-import s from './Services.module.css';
 import { useQuery } from "@tanstack/react-query";
-import { getServices } from "../../../api/servicesApi";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import { baseURL } from '../../../api/baseUrl';
+import { NavLink } from 'react-router-dom';
+import { getServices } from "../../../api/servicesApi";
+import s from './Services.module.css';
 
 
 function Services() {
@@ -63,7 +62,7 @@ function Services() {
                       : "none"
                   }} className={`${s.service} ${s.engine}`}>
                     <div className={s.service_name}>
-                        {service.name}
+                        {service.name}’
                     </div>
                 </NavLink> 
                 )

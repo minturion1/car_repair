@@ -1,8 +1,7 @@
-import s from './Header.module.css';
+import { useEffect, useState } from 'react';
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import { useState, useEffect } from 'react';
-import { baseURL } from '../../../../api/baseUrl';
+import s from './Header.module.css';
 
 function Header(props) {
   const [imageLoaded, setImageLoaded] = useState(false);

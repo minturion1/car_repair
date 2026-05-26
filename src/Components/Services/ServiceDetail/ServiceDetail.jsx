@@ -1,18 +1,9 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
-import Footer from '../../Footer/Footer';
-import s from './ServiceDetail.module.css';
-import Header from './Header/Header';
-import Sidebar from './Sidebar/Sidebar';
-import Nav from '../../Nav/Nav';
-import Features from './Features/Features';
 import Book from '../../Book/Book';
-import FAQ from '../../FAQ/FAQ';
-import { useQuery } from '@tanstack/react-query';
-import { getServiceById } from '../../../api/servicesApi';
-import Skeleton from 'react-loading-skeleton';
+import Footer from '../../Footer/Footer';
+import Nav from '../../Nav/Nav';
+import s from './ServiceDetail.module.css';
 import ServiceDetailContent from './ServiceDetailContent';
+import Sidebar from './Sidebar/Sidebar';
 
 function ServiceDetail() {
     

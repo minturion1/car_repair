@@ -1,8 +1,8 @@
-import Header from './Header/Header';
-import ServicesList from './ServicesList/ServicesList';
-import s from './Services.module.css';
 import Book from '../Book/Book';
 import Footer from '../Footer/Footer';
+import Header from './Header/Header';
+import s from './Services.module.css';
+import ServicesList from './ServicesList/ServicesList';
 
 function Services() {
     return (

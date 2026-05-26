@@ -1,6 +1,6 @@
 import axios from "axios";
+import { baseURL } from "./baseUrl";
 
-export const baseURL = "http://realistic-car-8426bb2aec.strapiapp.com";
 
 const api = axios.create({
   baseURL: `${baseURL}/api`,

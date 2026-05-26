@@ -1,8 +1,8 @@
-import s from './MakeAppointment.module.css';
-import Header from './Header/Header';
-import BookBlock from './BookBlock/BookBlock';
-import Footer from '../Footer/Footer';
 import ContactsBlock from '../ContactsBlock/ContactsBlock';
+import Footer from '../Footer/Footer';
+import BookBlock from './BookBlock/BookBlock';
+import Header from './Header/Header';
+import s from './MakeAppointment.module.css';
 
 function MakeAppointment() {
     return (

@@ -1,8 +1,8 @@
-import s from './Nav.module.css';
-import { NavLink } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from 'react';
 import { GrSchedules } from "react-icons/gr";
+import { NavLink } from 'react-router-dom';
+import s from './Nav.module.css';
 
 
 function Nav() {
