@@ -6,7 +6,8 @@ import axios from "axios";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useQuery } from '@tanstack/react-query';
-import { baseURL, getServices } from '../../../api/servicesApi';
+import { getServices } from '../../../api/servicesApi';
+import { baseURL } from '../../../api/baseUrl';
 
 function ServicesList() {
   const {
@@ -58,7 +59,7 @@ function ServicesList() {
             {services.map((service) => {
             return(
                 <NavLink key={service.id} to={`/services/${service.documentId}`} className={s.card}>
-                  <img alt={service.id} src={`${baseURL}${service.icon.url}`} className={s.icon}></img>
+                  <img alt={service.id} src={`${service.icon.url}`} className={s.icon}></img>
                   <div className={s.title}>{service.name}</div>
                   <div className={s.par}>{service.description}</div>
                   <div className={s.overlay}>

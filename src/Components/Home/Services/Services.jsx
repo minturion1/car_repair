@@ -2,9 +2,10 @@
 import { NavLink } from 'react-router-dom';
 import s from './Services.module.css';
 import { useQuery } from "@tanstack/react-query";
-import { baseURL, getServices } from "../../../api/servicesApi";
+import { getServices } from "../../../api/servicesApi";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { baseURL } from '../../../api/baseUrl';
 
 
 function Services() {
@@ -58,7 +59,7 @@ function Services() {
             {services.map(service=> {
                 return(
                 <NavLink key={service.id} to={`/services/${service.documentId}`} style={{ backgroundImage: service.image?.url
-                      ? `url(${baseURL + service.image.url})`
+                      ? `url(${service.image.url})`
                       : "none"
                   }} className={`${s.service} ${s.engine}`}>
                     <div className={s.service_name}>

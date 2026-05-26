@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import s from './ImageModal.module.css';
-import { baseURL } from "../../../../../api/servicesApi";
+import { baseURL } from "../../../../../api/baseUrl";
 
 export default function ImageModal(props) {
   const [loaded, setLoaded] = useState(false);
@@ -28,7 +28,7 @@ export default function ImageModal(props) {
 
       {props.openedImage && (
         <img
-          src={`${baseURL}${props.openedImage.image.url}`}
+          src={`${props.openedImage.image.url}`}
           onLoad={() => setLoaded(true)}
           className={`${s.openedImage} ${loaded ? s.loaded : ""}`}
         />

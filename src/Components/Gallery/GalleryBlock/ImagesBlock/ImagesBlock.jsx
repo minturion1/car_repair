@@ -2,9 +2,9 @@ import ImageModal from './ImageModal/ImageModal';
 import s from './ImagesBlock.module.css';
 import { useState } from 'react';
 import "react-loading-skeleton/dist/skeleton.css";
-import { baseURL } from '../../../../api/servicesApi';
 import { getImageById } from '../../../../api/galleryApi';
 import { useQuery } from '@tanstack/react-query';
+import { baseURL } from '../../../../api/baseUrl';
 
 
 function ImagesBlock(props) {
@@ -80,7 +80,7 @@ function ImagesBlock(props) {
                 {images.slice(0,visibleCount).map((img, index) => (
                 
                 <div className={s.galleryItem} key={img.documentId}>
-                    <img loading="lazy" onClick={()=>{imageClick(img.documentId)}} src={`${baseURL}${img.image.url}`} alt={img.caption} />
+                    <img loading="lazy" onClick={()=>{imageClick(img.documentId)}} src={`${img.image.url}`} alt={img.caption} />
                 </div>
             ))}
             
