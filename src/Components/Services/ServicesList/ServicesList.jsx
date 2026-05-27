@@ -12,12 +12,12 @@ function ServicesList() {
     isError,
     error,
   } = useQuery({
-    queryKey: ["services", "all"],
+    queryKey: ["services", "icons"],
     queryFn: getServices,
     staleTime: 1000 * 60 * 5,
     refetchOnWindowFocus: false,
   });
-    console.log(services)
+    console.log(services) 
     if (isLoading) {
     return (
       <div className={s.skeleton}>
