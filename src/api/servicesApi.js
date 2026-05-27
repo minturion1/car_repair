@@ -6,11 +6,16 @@ const api = axios.create({
   baseURL: `${baseURL}/api`,
 });
 
-export const getServices = async (limit) => {
-  const query = limit ? `/services?pagination[limit]=${limit}&populate=*`
-  : `/services?populate=*`;
+export const getLimitedServices = async (limit) => {
+  const { data } = await api.get(
+    `/services?pagination[limit]=${limit}&populate=*`
+  );
 
-  const { data } = await api.get(query);
+  return data.data;
+};
+
+export const getServices = async () => {
+  const { data } = await api.get("/services?populate=*");
 
   return data.data;
 };

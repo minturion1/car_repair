@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { NavLink } from 'react-router-dom';
-import { getServices } from "../../../api/servicesApi";
+import { getLimitedServices } from "../../../api/servicesApi";
 import s from './Services.module.css';
 
 
@@ -15,7 +15,7 @@ function Services() {
     error,
   } = useQuery({
     queryKey: ["services", 3],
-    queryFn: ()=> (getServices(3)),
+    queryFn: ()=> (getLimitedServices(3)),
     staleTime: 1000 * 60 * 5,
     refetchOnWindowFocus: false,
   });
@@ -62,7 +62,7 @@ function Services() {
                       : "none"
                   }} className={`${s.service} ${s.engine}`}>
                     <div className={s.service_name}>
-                        {service.name}’
+                        {service.name}
                     </div>
                 </NavLink> 
                 )

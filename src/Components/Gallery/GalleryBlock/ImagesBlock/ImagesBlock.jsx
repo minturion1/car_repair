@@ -11,6 +11,7 @@ function ImagesBlock(props) {
     const [visibleCount,setVisiblecount] = useState(6);
     const [openImageId, setOpenImageId] = useState(null);
     
+    
     const {
         data: image = null,
         isFetching,
@@ -28,7 +29,6 @@ function ImagesBlock(props) {
     if (isError) {
         return <p style={{ color: "red" }}>Error: {error.message}</p>;
     }
-    console.log(image);
     function imageClick(imageId) {
         setOpenImageId(imageId);
     }

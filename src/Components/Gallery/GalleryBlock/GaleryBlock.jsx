@@ -22,6 +22,7 @@ function GalleryBlock() {
         refetchOnWindowFocus: false,
         keepPreviousData: true,
     });
+
     if (isError) {
         return <p style={{ color: "red" }}>Error: {error.message}</p>;
     }
